@@ -26,12 +26,12 @@ import java.util.List;
         }
 
         @PostMapping(value = "/userinfo")
-        public ResponseEntity<provider> create(@RequestBody provider newUser) {
+        public ResponseEntity<String> create(@RequestBody provider newUser) {
             provider user = providerService.save(newUser);
             if (user == null) {
                 throw new IllegalArgumentException("user is null");
             } else {
-                return new ResponseEntity<>(user, HttpStatus.CREATED);
+                return new ResponseEntity<>("User Created", HttpStatus.CREATED);
             }
         }
 

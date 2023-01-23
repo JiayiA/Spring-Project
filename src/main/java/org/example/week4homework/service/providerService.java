@@ -18,7 +18,7 @@ public class providerService {
     }
 
     public provider save(provider user){
-        providerRepository.add(user);
+        providerRepository.save(user);
         if(user == null) {
             throw new IllegalArgumentException("Can't create student since it's null");
         }
